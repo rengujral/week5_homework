@@ -4,8 +4,19 @@
 import random
 # function to request input from user
 def get_user_choice():
-    user_choice = input('Enter your choice (rock, paper, scissors): ')
-    return user_choice
+    user_choice = input("Pick your choice from Rock, Paper, or Scissors by inputting either R, P, or S: ").upper()
+    # the .upper Converts the player's input to uppercase to ensure case insensitivity.
+    if user_choice == "P":
+        print("Your choice: Paper")
+        return "Paper"
+    elif user_choice == "S":
+        print("Your choice: Scissors")
+        return "Scissors"
+    elif user_choice == "R":
+        print("Your choice: Rock")
+        return "Rock"
+    else:
+        print("Please input either P, S, or R")
 
 
 # function to termine the computer choice
@@ -27,11 +38,22 @@ def winning_combinations(computer, user):
     else:
         return"You lose!"
 
+# # dictionary defining winning key value pairs
+#     winning_conditions = {'Rock': 'Scissors', 'Paper': 'Rock', 'Scissors': 'Paper'}
+#
+#     # if loop determining whether user beats computer or if there is a draw and displaying corresponding message
+#     if player == computer:
+#         return "It's draw!"
+#     elif winning_conditions [player] == computer:
+#         return "You win!"
+#     else:
+#         return "You lose.."
+
 def play_game():
     user_turn= get_user_choice()
     computer_turn = get_computer_choice()
 
-    print(f'user choice:{user_turn}')
+
     print(f'the computer choice: {computer_turn}')
 
     result = winning_combinations(user_turn, computer_turn)
