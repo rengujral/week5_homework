@@ -20,11 +20,12 @@ def get_user_choice():
         return "Rock"
     else:
         print("Please input either P, S, or R")
+        return get_user_choice()
 
 
 # function to termine the computer choice
 def get_computer_choice() -> str:
-    computer_choices = {0:"rock", 1:'paper', 2:'scissors'}
+    computer_choices = {0:"Rock", 1:'Paper', 2:'Scissors'}
     # we create a list map the values
     return computer_choices[random.choice([0, 1, 2])]
 # the function random.choice() from the module random returns a randomly selected value from the list[]
@@ -34,12 +35,12 @@ def get_computer_choice() -> str:
 def winning_combinations(computer, user):
     if computer == user:
         return'it is a tie'
-    elif (user == 'rock' and computer == 'scissors') or \
-         (user == 'scissors' and computer == 'paper') or \
-         (user== 'paper' and computer == 'rock'):
-        return"You win!"
-    else:
+    elif (user == 'Rock' and computer == 'Scissors') or \
+         (user == 'Scissors' and computer == 'Paper') or \
+         (user== 'Paper' and computer == 'Rock'):
         return"You lose!"
+    else:
+        return"You win!"
 
 # # dictionary defining winning key value pairs
 #     winning_conditions = {'Rock': 'Scissors', 'Paper': 'Rock', 'Scissors': 'Paper'}
