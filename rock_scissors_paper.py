@@ -1,11 +1,14 @@
 # prompt the user to enter the value R/S/P
 # rock = 0 paper = 1 scissors= 2
 
+# import random to be able to randomise the computer's weapon choice
 import random
 # function to request input from user
 def get_user_choice():
+    # prompt the user to enter the initial of the weapon of their choice
+    # .upper Converts the player's input to uppercase to ensure case insensitivity.
     user_choice = input("Pick your choice from Rock, Paper, or Scissors by inputting either R, P, or S: ").upper()
-    # the .upper Converts the player's input to uppercase to ensure case insensitivity.
+    # if loop determining if user input is valid, and establishes intials to value connection
     if user_choice == "P":
         print("Your choice: Paper")
         return "Paper"
@@ -48,17 +51,19 @@ def winning_combinations(computer, user):
 #         return "You win!"
 #     else:
 #         return "You lose.."
-
+# function created to play the game
 def play_game():
     user_turn= get_user_choice()
     computer_turn = get_computer_choice()
 
-
+    # Display choices
     print(f'the computer choice: {computer_turn}')
 
+    # Determine and print the winner
     result = winning_combinations(user_turn, computer_turn)
     print(result)
 
+# magic trick
 if __name__=='__main__':
     play_game()
 
