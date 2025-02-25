@@ -170,3 +170,8 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 .idea/
+main.py
+.DS_Store
+.idea/vcs.xml
+.idea/vcs.xml
+import_function.py
